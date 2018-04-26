@@ -16,9 +16,10 @@
     "skipLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@components/*": [
-        "src/components/*"
-      ]
+      "@components/*": ["src/components/*"],
+      "@src/*": ["src/*"],
+      "@images/*": ["src/assets/images/*"],
+      "@assets/*": ["src/assets/*"]
     },
     "typeRoots": [
       "./node_modules/@types"

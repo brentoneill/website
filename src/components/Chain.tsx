@@ -2,16 +2,16 @@ import React from 'react';
 import {Col, Row} from 'antd';
 import styled from 'styled-components';
 //
-import {MarketText, MarketList} from '../Styles';
-import chain1 from '../images/chain1.svg'
-import chain2 from '../images/chain2.svg'
-import rightArrow from '../images/right_arrow.svg'
-import leftArrow from '../images/left_arrow.svg'
-import asset10 from '../images/asset_10.svg'
-import asset4 from '../images/asset_4.svg'
-import asset7 from '../images/asset_7.svg'
-import asset8 from '../images/asset_8.svg'
-import {device, size} from "../breakpoints";
+import {MarketText, MarketList} from '@src/Styles';
+import chain1 from '@images/chain1.svg'
+import chain2 from '@images/chain2.svg'
+import rightArrow from '@images/right_arrow.svg'
+import leftArrow from '@images/left_arrow.svg'
+import asset10 from '@images/asset_10.svg'
+import asset4 from '@images/asset_4.svg'
+import asset7 from '@images/asset_7.svg'
+import asset8 from '@images/asset_8.svg'
+import {device} from "@src/breakpoints";
 
 const Wrapper = styled.div`
   background-color: ${props => props.bg || '#fff'};
@@ -21,6 +21,10 @@ const Wrapper = styled.div`
   
   @media ${device.mobileS} {
     padding: ${props => props.padded ? '20px' : '0px'};
+    height: 220px;
+  }
+  
+  @media ${device.tablet} {
     height: 270px;
   }
   
@@ -62,9 +66,9 @@ class Chain extends React.Component {
           </Col>
           <Col xs={12} sm={12} md={8} lg={8} xl={8}>
             <Wrapper bg="#00E2C1">
-              <Arrow alt="rightarrow" src={rightArrow}/>
+              <Arrow alt="rightarrow" src={rightArrow} style={{paddingBottom: '35px'}}/>
               <img alt="exchange" src={chain2} style={{marginTop: '80px'}} width='100%' />
-              <MarketText style={{color: '#fff', textAlign: 'center'}}>Predictable</MarketText>
+              <MarketText style={{color: '#000', textAlign: 'center'}}>Predictable</MarketText>
             </Wrapper>
           </Col>
         </Row>
@@ -78,13 +82,13 @@ class Chain extends React.Component {
           </Col>
           <Col xs={12} md={{span: 8, pull: 8}} lg={{span: 8, pull: 8}} xl={{span: 8, pull: 8}}>
             <Wrapper bg="#181E26">
-              <Arrow alt="leftarrow" src={leftArrow} style={{right: '0px', marginTop: '30px'}}/>
+              <Arrow alt="leftarrow" src={leftArrow} style={{right: '0px', marginTop: '30px', marginRight: '-1px'}}/>
               <ChainIllustration alt="bitcoin" src={asset10}/>
             </Wrapper>
           </Col>
           <Col xs={12} md={{span: 8, pull: 8}} lg={{span: 8, pull: 8}} xl={{span: 8, pull: 8}}>
             <Wrapper bg="#00E2C1">
-              <Arrow alt="exchange" src={rightArrow}/>
+              <Arrow alt="exchange" src={rightArrow} style={{marginLeft: '-1px'}}/>
               <ChainIllustration alt="etherium" src={asset8} />
             </Wrapper>
           </Col>
@@ -98,13 +102,13 @@ class Chain extends React.Component {
           </Col>
           <Col xs={12} sm={12} md={8} lg={8} xl={8}>
             <Wrapper bg="#181E26">
-              <Arrow alt="leftarrow" src={leftArrow} style={{right: '0px', marginTop: '30px'}}/>
+              <Arrow alt="leftarrow" src={leftArrow} style={{right: '0px', marginTop: '30px', marginRight: '-1px'}}/>
               <ChainIllustration alt="tether" src={asset4}/>
             </Wrapper>
           </Col>
           <Col xs={12} sm={12} md={8} lg={8} xl={8}>
             <Wrapper bg="#00E2C1">
-              <Arrow alt="exchange" src={rightArrow}/>
+              <Arrow alt="rightarrow" src={rightArrow} style={{marginLeft: '-1px'}}/>
               <ChainIllustration alt="aapl" src={asset7} />
             </Wrapper>
           </Col>

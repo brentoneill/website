@@ -2,8 +2,8 @@ import React from 'react';
 import {Col, Row} from 'antd';
 import styled from 'styled-components';
 //
-import heroIllustration from '../images/hero-illustration.png';
-import {device, size} from "../breakpoints";
+import heroIllustration from '@images/hero-illustration.png';
+import {device, size} from "@src/breakpoints";
 
 const HeroArt = styled.div`
   text-align: right;

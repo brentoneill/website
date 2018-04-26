@@ -1,10 +1,11 @@
 import React from 'react';
 import {Button, Col, Row} from 'antd';
 import styled from 'styled-components';
+import {Link} from 'react-static';
 //
-import {MarketText} from '../Styles';
-import Protocol from '../images/protocol_illustration.svg';
-import {device, size} from "../breakpoints";
+import {MarketText} from '@src/Styles';
+import Protocol from '@images/protocol_illustration.svg';
+import {device, size} from "@src/breakpoints";
 
 const TextWrapper = styled.div`
   padding: 0px 10px;
@@ -42,7 +43,15 @@ const SectionWrapper = styled.section`
   @media ${device.laptop} {
     padding: 70px;
   }
+`;
+
+const ButtonWrapper = styled(Button)`
+  margin-top: 20px;
+  margin-right: 20px;
   
+  @media ${device.mobileS} and (max-width: ${size.mobileL}) {
+    width: 100%;
+  }
 `;
 
 class BuildDapp extends React.Component {
@@ -59,8 +68,10 @@ class BuildDapp extends React.Component {
             <TextWrapper>
               <MarketText header>Build your dApp on Market Protocol</MarketText>
               <MarketText style={{margin: '40px 0'}}>As a protocol, MARKET enables third parties to build applications for trading, order routing and related activities. The protocol is open source and available under the Apache 2.0 license.</MarketText>
-              <Button type="primary" style={{padding: '0 5%', textAlign: 'center', marginTop: '20px', marginRight: '20px'}}><a href="#" target="_blank">Check us out on Github</a></Button>
-              <Button type="primary" style={{padding: '0 5%', textAlign: 'center', marginTop: '20px', marginRight: '20px'}}><a href="#" target="_blank">Learn more about us</a></Button>
+              <ButtonWrapper type="primary" style={{padding: '0 5%'}}>
+                <Link to="https://github.com/MARKETProtocol/dapp" target="_blank" style={{color: 'inherit', textDecoration: 'none'}}>Check us out on Github</Link>
+              </ButtonWrapper>
+              <ButtonWrapper type="primary" style={{padding: '0 7.5%'}}><a href="#" target="_blank">Learn more about us</a></ButtonWrapper>
             </TextWrapper>
           </Col>
         </Row>

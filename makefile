@@ -3,9 +3,11 @@
 ## settings
 
 # name of the AWS profile for deployment of the site to dev
-DEV_PROFILE_NAME=marketprotocol-dev-rw
+DEV_PROFILE_NAME=dev-website-rw
+PROD_PROFILE_NAME=prod-website-rw
 # target AWS bucket for dev deployment
 DEV_BUCKET=s3://dev.website.marketprotocol.io
+PROD_BUCKET=s3://marketprotocol.io
 
 # default make target
 default:
@@ -49,9 +51,30 @@ ls_dev:
 
 # DEV - remove deployed site from s3 bucket
 rm_dev:
-	aws s3 --profile $(DEV_PROFILE_NAME) rm $(DEV_BUCKET)/dev --recursive
+	aws s3 --profile $(DEV_PROFILE_NAME) rm $(DEV_BUCKET) --recursive
 
 # DEV - deploy site to s3 bucket
 deploy_dev:
+	npm run build
+	cp -r ./assets ./dist/
 	aws s3 --profile $(DEV_PROFILE_NAME) cp dist/ $(DEV_BUCKET) --recursive
+
+
+# PROD - display contents of deployed site
+ls_prod:
+	aws s3 --profile $(PROD_PROFILE_NAME) ls $(PROD_BUCKET)
+
+# PROD - remove deployed site from s3 bucket
+rm_prod:
+	aws s3 --profile $(PROD_PROFILE_NAME) rm $(PROD_BUCKET) --recursive
+
+# PROD - deploy site to s3 bucket
+deploy_prod:
+	npm run build
+	cp -r ./assets ./dist/
+	aws s3 --profile $(PROD_PROFILE_NAME) cp dist/ $(PROD_BUCKET) --recursive
+
+
+
+
 

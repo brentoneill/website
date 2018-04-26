@@ -1,9 +1,11 @@
 import React from 'react';
-import {Button, Col, Icon, Input, Row} from 'antd';
+import {Button, Col, Icon, Row} from 'antd';
 //
-import {MarketText} from '../Styles';
+
 import styled from "styled-components";
-import {device} from "../breakpoints";
+import MarketSubscriberForm from "@components/MarketSubscriberForm";
+import {MarketText} from "@src/Styles";
+import {device} from "@src/breakpoints";
 
 const SectionWrapper = styled.section`
   background: #F0F0F0;
@@ -17,32 +19,26 @@ const SectionWrapper = styled.section`
   }
 `;
 
+// encoded
+const PartnersEmail = {
+  email: "partnerships@marketprotocol.io",
+  subject: "Partnership%20with%20MARKET%20Protocol",
+  body: "Please%20explain%20your%20company%20and%20your%20interest%20in%20the%20protocol%20as%20well%20as%20any%20other%20helpful%20details."
+}
+
 class Cta extends React.Component {
   render() {
     return (
-      <SectionWrapper>
+      <SectionWrapper id="ctaSection">
         <Row type="flex" align="middle">
           <Col xs={24} sm={24} md={12} lg={12} xl={12} style={{padding: '0 20px', marginTop: '70px'}}>
-            <MarketText style={{fontSize: '24px', marginBottom: '30px'}}>Join our Newsletter</MarketText>
-            <Input
-              placeholder="Enter your email here"
-              suffix={(
-                <Button className="search-btn" size="large" type="primary" style={{padding: '0 10px', height: '38px'}}>
-                  <Icon type="arrow-right" />
-                </Button>
-              )}
-            />
+            <MarketSubscriberForm title="Join our Newsletter" hint="Enter your email here" campaignToken="6yWV9" />
           </Col>
-          <Col xs={24} sm={24} md={12} lg={12} xl={12} style={{padding: '0 20px', marginTop: '70px'}}>
+          <Col xs={24} sm={24} md={12} lg={12} xl={12} style={{padding: '0 20px', marginTop: '40px'}}>
             <MarketText style={{fontSize: '24px', marginBottom: '30px'}}>Become a Partner</MarketText>
-            <Input
-              placeholder="Email Us"
-              suffix={(
-                <Button className="search-btn" size="large" type="primary" style={{padding: '0 10px', height: '38px'}}>
-                  <Icon type="arrow-right" />
-                </Button>
-              )}
-            />
+            <Button href={`mailto:${PartnersEmail.email}?subject=${PartnersEmail.subject}&body=${PartnersEmail.body}`} type="primary" style={{width: "100%", textAlign:"left"}}>
+              Email Us <Icon type="arrow-right" style={{position: "absolute", top: "35%", right: "15px"}} />
+            </Button>
           </Col>
         </Row>
       </SectionWrapper>

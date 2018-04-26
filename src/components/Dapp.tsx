@@ -2,12 +2,12 @@ import React from 'react';
 import {Button, Col, Row} from 'antd';
 import styled from 'styled-components';
 //
-import {MarketText, MarketList} from '../Styles';
-import {device, size} from '../breakpoints';
-import asset3 from '../images/asset_3.svg';
-import asset9 from '../images/asset_9.svg';
-import asset5 from '../images/asset_5.svg';
-import tablet from '../images/tablet.svg';
+import {MarketText, MarketList} from '@src/Styles';
+import {device, size} from '@src/breakpoints';
+import asset3 from '@images/asset_3.svg';
+import asset9 from '@images/asset_9.svg';
+import asset5 from '@images/asset_5.svg';
+import tablet from '@images/tablet.svg';
 
 const Wrapper = styled.div`
   background-color: #00E2C1;
@@ -55,7 +55,12 @@ const HeaderText = MarketText.extend`
   @media ${device.mobileS} and (max-width: ${size.mobileL}) {
     padding: 70px 20px;
   }
-  
+`;
+
+const ButtonWrapper = styled(Button)`  
+  @media ${device.mobileS} and (max-width: ${size.mobileL}) {
+    width: 100%;
+  }
 `;
 
 class Dapp extends React.Component {
@@ -93,7 +98,7 @@ class Dapp extends React.Component {
               <MarketList>A contract defines the ERC20 token used as collateral, the oracle and the reference asset.</MarketList>
               <MarketList>Once created, MARKET Protocol contracts are deployed to the blockchain allowing trustless, many to many trading</MarketList>
               <MarketList>Exiting a position is as easy as trading with another user or holding the contract until expiration</MarketList>
-              <Button type="primary" style={{padding: '0 50px', marginTop: '20px'}}><a href="https://dapp.marketprotocol.io" target="_blank">Try out our Demo dApp</a></Button>
+              <ButtonWrapper type="primary" style={{padding: '0 5%', marginTop: '20px'}}><a href="https://dapp.marketprotocol.io" target="_blank">Try out our Demo dApp</a></ButtonWrapper>
             </TextWrapper>
           </Col>
           <Col xs={24} sm={24} md={12} lg={12} xl={12}>

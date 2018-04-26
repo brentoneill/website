@@ -3,9 +3,9 @@ import {Col, Row} from 'antd';
 import styled from 'styled-components';
 //
 import {MarketText, MarketList} from '../Styles';
-import asset1 from '../images/asset_1.svg';
-import asset2 from '../images/asset_2.svg';
-import {device, size} from "../breakpoints";
+import asset1 from '@images/asset_1.svg';
+import asset2 from '@images/asset_2.svg';
+import {device, size} from "@src/breakpoints";
 
 const IllustrationContainer = styled.div`
   background-color: #00E2C1;
