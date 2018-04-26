@@ -16,10 +16,27 @@
     "skipLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@components/*": ["src/components/*"],
-      "@src/*": ["src/*"],
-      "@images/*": ["src/assets/images/*"],
-      "@assets/*": ["src/assets/*"]
+      "@components/*": [
+        "src/components/*"
+      ],
+      "@styledComponents": [
+        "src/Styles.tsx"
+      ],
+      "@helpers/*": [
+        "src/helpers/*"
+      ],
+      "@styles/*": [
+        "src/styles/*"
+      ],
+      "@assets/*": [
+        "src/assets/*"
+      ],
+      "@images/*": [
+        "src/assets/images/*"
+      ],
+      "@src/*": [
+        "src/*"
+      ]
     },
     "typeRoots": [
       "./node_modules/@types"

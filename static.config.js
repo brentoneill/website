@@ -25,7 +25,7 @@ const webpack = require('webpack')
 //
 export default {
   getSiteData: () => ({
-    title: 'React Static',
+    title: 'Market Protocol',
   }),
   getRoutes: async () => {
     return [
@@ -34,8 +34,8 @@ export default {
         component: 'src/containers/Home',
       },
       {
-        path: '/about',
-        component: 'src/containers/About',
+        path: '/team',
+        component: 'src/containers/Team',
       },
       {
         is404: true,
@@ -61,7 +61,9 @@ export default {
             <meta charSet="UTF-8" />
             <meta name="viewport" content="width=device-width, initial-scale=1" />
             <link rel="shortcut icon" href="/favicon.png" />
+            <link href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,500,700" rel="stylesheet" />
             {renderMeta.styleTags}
+            <title>Market Protocol</title>
           </Head>
           <Body>
             {children}
@@ -223,7 +225,6 @@ export default {
     /*
     * Add new Loaders to default Loaders
     * */
-
     config.module.rules = [
       {
         oneOf: [

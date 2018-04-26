@@ -1,5 +1,5 @@
 import React from 'react';
-import {Router} from 'react-static';
+import { Router } from 'react-static';
 import {injectGlobal} from 'styled-components';
 import {hot} from 'react-hot-loader';
 //
@@ -17,26 +17,6 @@ injectGlobal`
     min-height: 100%;
     display: flex;
   }
-
-  .Navbar--mobile {
-    ul {
-      background: #fff;
-      border-right: 0;
-    }
-
-    .ant-popover-arrow {
-      top: -4px;
-    }
-
-    .ant-popover-inner-content {
-      padding-left: 10px;
-      padding-right: 10px;
-    }
-
-    .ant-popover-inner {
-      border-radius: 25px;
-    }
-  }
 `;
 
 class App extends React.Component {
@@ -45,7 +25,7 @@ class App extends React.Component {
       <Router>
         <Layout style={{width: '100vw'}}>
           <Navbar/>
-          <Content style={{background: '#FFFFFF', width: '100%vw'}}>
+          <Content style={{background: '#FFFFFF', width: '100vw'}}>
             <Routes />
           </Content>
           <MarketFooter />

@@ -21,7 +21,6 @@ const TextWrapper = styled.div`
   @media ${device.laptop} {
     padding: 0 50px 0 50px;
   }
-  
 `;
 
 const IllustrationWrapper = styled.div`
@@ -71,7 +70,11 @@ class BuildDapp extends React.Component {
               <ButtonWrapper type="primary" style={{padding: '0 5%'}}>
                 <Link to="https://github.com/MARKETProtocol/dapp" target="_blank" style={{color: 'inherit', textDecoration: 'none'}}>Check us out on Github</Link>
               </ButtonWrapper>
-              <ButtonWrapper type="primary" style={{padding: '0 7.5%'}}><a href="#" target="_blank">Learn more about us</a></ButtonWrapper>
+              <ButtonWrapper type="primary" style={{padding: '0 7.5%'}}>
+                <Link to="/team" style={{color: 'inherit', textDecoration: 'none'}}>
+                  Learn more about us
+                </Link>
+              </ButtonWrapper>
             </TextWrapper>
           </Col>
         </Row>

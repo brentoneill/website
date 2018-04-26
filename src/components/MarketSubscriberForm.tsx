@@ -8,8 +8,7 @@ const FormItem = Form.Item;
 
 interface Props extends FormComponentProps {
   title: string,
-  hint: string,
-  campaignToken: string
+  hint: string
 }
 
 /**
@@ -30,17 +29,19 @@ class MarketSubscriberForm extends React.Component<Props> {
     const { getFieldDecorator } = this.props.form;
     return (<div>
       <MarketText style={{fontSize: '24px', marginBottom: '30px'}}>{this.props.title}</MarketText>
-      <Form action="https://app.getresponse.com/add_subscriber.html" onSubmit={this.handleSubmit} acceptCharset="utf-8" method="post">
-      <input type="hidden" name="campaign_token" value={this.props.campaignToken} />
-      <FormItem>
+      <Form action="https://marketprotocol.us17.list-manage.com/subscribe/post" onSubmit={this.handleSubmit} acceptCharset="utf-8" method="post">
+        <input type="hidden" name="u" value="ef1f265a21b4aae9002084ee3" />
+        <input type="hidden" name="id" value="491f750dec" />
+      
+        <FormItem>
           {getFieldDecorator('email', {
             rules: [
               { required: true, message: 'Please input an Email!' },
-              { type: 'email', message: 'Please input a correct Email'}
+              { type: 'email', message: 'Please input a correct Email' }
             ],
           })(
             <Input
-              name="email"
+              name="MERGE0"
               placeholder={this.props.hint}
               suffix={(
                 <Button className="search-btn" htmlType="submit" size="large" type="primary" style={{padding: '0 10px', height: '38px'}}>
@@ -49,6 +50,9 @@ class MarketSubscriberForm extends React.Component<Props> {
               )} />
           )}
         </FormItem>
+        {/* These are the field name for these parameters in mailchimp */}
+        {/* <input type="text" name="MERGE1" id="MERGE1" /> */} {/*First Name*/}
+        {/* <input type="text" name="MERGE2" id="MERGE2" /> */} {/*Last Name*/}
       </Form>
     </div>);
   }
