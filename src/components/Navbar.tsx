@@ -12,6 +12,10 @@ const Logo = styled.div`
   line-height: 64px;
   margin: 0;
   float: left;
+
+  @media (max-width: ${size.mobileS}) {
+    max-width: 200px;
+  }
 `;
 
 const HeaderWrapper = styled.div`
@@ -26,12 +30,28 @@ const HeaderWrapper = styled.div`
 
     .Navbar__mobile-menu-toggle {
       display: block;
+      font-size: 24px;
     }
 
     .Navbar--mobile {
       ul.Navbar__menu {
         border-right: 0;
       }
+    }
+  }
+
+  @media (max-width: ${size.mobileM}) {
+
+    .Navbar {
+      padding-left: 30px;
+      padding-right: 30px;
+    }
+
+    .Navbar__mobile-menu-toggle {
+      margin-left: 5px;
+      font-size: 16px;
+      width: 32px;
+      height: 32px;
     }
   }
 `;
@@ -83,7 +103,7 @@ class Navbar extends React.Component {
   render(): JSX.Element {
     return (
       <HeaderWrapper>
-        <Header className="Navbar--desktop">
+        <Header className="Navbar">
           <Logo><a href="/"><img alt="react-static" width="100%" src={logoImg}/></a></Logo>
             {this.renderMenuMarkup('desktop')}
             <Popover
@@ -93,7 +113,7 @@ class Navbar extends React.Component {
               <Button className="Navbar__mobile-menu-toggle"
                       shape="circle"
                       icon='bars'
-                      style={{ color: '#fff', cursor: 'pointer', float: 'right', marginTop: 15, fontSize: 24 }}/>
+                      style={{ color: '#fff', cursor: 'pointer', float: 'right', marginTop: 15 }}/>
             </Popover>
         </Header>
       </HeaderWrapper>
