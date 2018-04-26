@@ -9,8 +9,6 @@ const {Content} = Layout;
 import MarketFooter from '@components/Footer';
 import Navbar from '@components/Navbar';
 
-// NOTE: Where can I put these navbar styles?
-
 injectGlobal`
   #root {
     min-width: 100%;

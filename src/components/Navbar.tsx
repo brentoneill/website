@@ -3,10 +3,11 @@ import { Layout, Menu, Button, Popover } from 'antd';
 import styled from 'styled-components';
 import { Link } from 'react-static';
 import { size } from "../breakpoints";
-
-//
 import logoImg from '@images/logo_light.svg';
+
+
 const { Header } = Layout;
+
 
 const Logo = styled.div`
   line-height: 64px;
@@ -18,54 +19,81 @@ const Logo = styled.div`
   }
 `;
 
-const HeaderWrapper = styled.div`
-  .Navbar__mobile-menu-toggle {
-    display: none;
-  }
-
+const StyledMenu= styled(Menu)`
   @media (max-width: ${size.tablet}) {
-    .Navbar__menu {
+    &.ant-menu-dark {
       display: none;
     }
 
-    .Navbar__mobile-menu-toggle {
-      display: block;
-      font-size: 24px;
+    &.ant-menu-light {
+       display: block;
+       background: #fff;
+       border-right: 0;
     }
+  }
+`;
 
-    .Navbar--mobile {
-      ul.Navbar__menu {
-        border-right: 0;
-      }
+const MobileMenuToggle = styled(Button)`
+  &.ant-btn {
+    display: none;
+    cursor: pointer;
+    float: right;
+    margin-top: 15px;
+  }
+
+  i {
+    font-size: 24px;
+    color: #fff;
+  }
+
+  @media (max-width: ${size.tablet}) {
+    &.ant-btn {
+      display: block;
     }
   }
 
   @media (max-width: ${size.mobileM}) {
-
-    .Navbar {
-      padding-left: 30px;
-      padding-right: 30px;
-    }
-
-    .Navbar__mobile-menu-toggle {
+    &.ant-btn {
       margin-left: 5px;
-      font-size: 16px;
       width: 32px;
       height: 32px;
+      i { font-size: 16px; }
     }
   }
+`
+
+const HeaderWrapper = styled.div`
+  @media (max-width: ${size.mobileM}) {
+    .ant-layout-header { padding-left: 30px; padding-right: 30px;}
+  }
+
+  @media (max-width: ${size.mobileS}) {
+    .ant-layout-header { padding-left: 20px; padding-right: 20px;}
+  }
+
+
+ .ant-popover-arrow {
+   top: -4px;
+ }
+
+ .ant-popover-inner-content {
+   padding-left: 10px;
+   padding-right: 10px;
+ }
+
+ .ant-popover-inner {
+   border-radius: 25px;
+ }
 `;
 
 class Navbar extends React.Component {
 
   renderMenuMarkup(breakpoint: string): JSX.Element {
     return (
-      <Menu
-        className={`Navbar__menu Navbar__menu--${breakpoint}`}
+      <StyledMenu
         theme={breakpoint === 'desktop' ? 'dark' : 'light'}
         mode={breakpoint === 'desktop' ? 'horizontal' : 'vertical'}
-        style={{ lineHeight: '64px', float: breakpoint === 'desktop' ? 'right' : 'none' }}
-      >
+        style={{ lineHeight: '64px', float: breakpoint === 'desktop' ? 'right' : 'none' }}>
         <Menu.Item key="1">
           <Link to="/team" style={{ color: 'inherit', textDecoration: 'none' }}>
             Team
@@ -99,24 +127,21 @@ class Navbar extends React.Component {
             Telegram
           </Link>
         </Menu.Item>
-      </Menu>
+      </StyledMenu>
     );
   }
 
   render(): JSX.Element {
     return (
       <HeaderWrapper>
-        <Header className="Navbar">
+        <Header>
           <Logo><a href="/"><img alt="react-static" width="100%" src={logoImg} /></a></Logo>
           {this.renderMenuMarkup('desktop')}
-          <Popover
-            overlayClassName={'Navbar--mobile'}
-            content={this.renderMenuMarkup('mobile')}
-            trigger='click'>
-            <Button className="Navbar__mobile-menu-toggle"
-              shape="circle"
-              icon='bars'
-              style={{ color: '#fff', cursor: 'pointer', float: 'right', marginTop: 15 }} />
+          <Popover getPopupContainer={triggerNode => triggerNode.parentNode as HTMLElement}
+                   content={this.renderMenuMarkup('mobile')}
+                   trigger='click'
+                   arrowPointAtCenter={true}>
+            <MobileMenuToggle shape="circle" icon='bars'/>
           </Popover>
         </Header>
       </HeaderWrapper>
