@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link, Router, withRouter} from 'react-static';
+import {Router} from 'react-static';
 import {injectGlobal} from 'styled-components';
 import {hot} from 'react-hot-loader';
 //
@@ -9,11 +9,33 @@ const {Content} = Layout;
 import MarketFooter from '@components/Footer';
 import Navbar from '@components/Navbar';
 
+// NOTE: Where can I put these navbar styles?
+
 injectGlobal`
   #root {
     min-width: 100%;
     min-height: 100%;
     display: flex;
+  }
+
+  .Navbar--mobile {
+    ul {
+      background: #fff;
+      border-right: 0;
+    }
+
+    .ant-popover-arrow {
+      top: -4px;
+    }
+
+    .ant-popover-inner-content {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+
+    .ant-popover-inner {
+      border-radius: 25px;
+    }
   }
 `;
 
