@@ -19,7 +19,7 @@ const Logo = styled.div`
   }
 `;
 
-const StyledMenu= styled(Menu)`
+const StyledMenu= styled(Menu as any)`
   @media (max-width: ${size.tablet}) {
     &.ant-menu-dark {
       display: none;
