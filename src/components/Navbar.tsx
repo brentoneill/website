@@ -25,10 +25,16 @@ const StyledMenu= styled(Menu as any)`
       display: none;
     }
 
-    &.ant-menu-light {
+    &.ant-menu-light.ant-menu-vertical {
        display: block;
        background: #fff;
        border-right: 0;
+
+       .ant-menu-item-selected {
+         border-radius: 12px;
+         background-color: #f1f1f1;
+         color: #00AD94;
+       }
     }
   }
 `;
