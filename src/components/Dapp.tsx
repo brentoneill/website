@@ -98,7 +98,7 @@ class Dapp extends React.Component {
               <MarketList>A contract defines the ERC20 token used as collateral, the oracle and the reference asset.</MarketList>
               <MarketList>Once created, MARKET Protocol contracts are deployed to the blockchain allowing trustless, many to many trading</MarketList>
               <MarketList>Exiting a position is as easy as trading with another user or holding the contract until expiration</MarketList>
-              <ButtonWrapper type="primary" style={{padding: '0 5%', marginTop: '20px'}}><a href="https://dapp.marketprotocol.io" target="_blank">Try out our Demo dApp</a></ButtonWrapper>
+              <ButtonWrapper type="primary" style={{padding: '0 5%', marginTop: '20px'}}><a href="https://dapp.marketprotocol.io" target="_blank">Try out our demo dApp</a></ButtonWrapper>
             </TextWrapper>
           </Col>
           <Col xs={24} sm={24} md={12} lg={12} xl={12}>

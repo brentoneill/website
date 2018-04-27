@@ -21,7 +21,7 @@ const config = {
     },
     {
       "name": "Collins Brown",
-      "title": "Co-Founder",
+      "title": "COO & Co-Founder",
       "img": teamMemberImages.CollinsBrown,
       "email": "collins@marketprotocol.io",
       "linkedin": "https://www.linkedin.com/in/collins-brown-2ab68126/",
@@ -106,7 +106,7 @@ const config = {
     },
     {
       "name": "Casper Johansen",
-      "title": "Co-Founder of Spartan Group",
+      "title": "Co-Founder, Spartan Group",
       "img": advisorImages.CasperJohansen,
       "email": "",
       "linkedin": "https://www.linkedin.com/in/casperbjohansen"

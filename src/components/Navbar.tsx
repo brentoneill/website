@@ -95,35 +95,35 @@ class Navbar extends React.Component {
         mode={breakpoint === 'desktop' ? 'horizontal' : 'vertical'}
         style={{ lineHeight: '64px', float: breakpoint === 'desktop' ? 'right' : 'none' }}>
         <Menu.Item key="1">
-          <Link to="/team" style={{ color: 'inherit', textDecoration: 'none' }}>
+          <Link to="/team" style={{color: 'inherit', textDecoration: 'none'}}>
             Team
           </Link>
         </Menu.Item>
         <Menu.Item key="2">
           <Link to="http://marketprotocol.io.s3-website-us-east-1.amazonaws.com/assets/MARKET_Protocol-Whitepaper.pdf"
-            style={{ color: 'inherit', textDecoration: 'none' }} target="_blank">
+                style={{color: 'inherit', textDecoration: 'none'}} target="_blank">
             Whitepaper
           </Link>
         </Menu.Item>
         <Menu.Item key="3">
-          <Link to="#" style={{ color: 'inherit', textDecoration: 'none' }}>
+          <Link to="https://docs.marketprotocol.io/#faq-general" style={{color: 'inherit', textDecoration: 'none'}}>
             FAQs
           </Link>
         </Menu.Item>
         <Menu.Item key="4">
-          <Link to="/#ctaSection" style={{ color: 'inherit', textDecoration: 'none' }}>
+          <Link to="/#ctaSection" style={{color: 'inherit', textDecoration: 'none'}}>
             Subscribe
           </Link>
         </Menu.Item>
         <Menu.Item key="5">
           <Link to="https://medium.com/market-protocol"
-            style={{ color: 'inherit', textDecoration: 'none' }} target="_blank">
+                style={{color: 'inherit', textDecoration: 'none'}} target="_blank">
             Blog
           </Link>
         </Menu.Item>
         <Menu.Item key="6">
-          <Link to="https://t.me/Market_Protocol_Chat" style={{ color: 'inherit', textDecoration: 'none' }}
-            target="_blank">
+          <Link to="https://t.me/Market_Protocol_Chat" style={{color: 'inherit', textDecoration: 'none'}}
+                target="_blank">
             Telegram
           </Link>
         </Menu.Item>

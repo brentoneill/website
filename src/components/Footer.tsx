@@ -105,7 +105,8 @@ class MarketFooter extends React.Component {
                 </Link>
               </FooterLink>
               <FooterLink>
-                <Link to="#" target="_blank" style={{color: 'inherit', textDecoration: 'none'}}>
+                <Link to="https://docs.marketprotocol.io/#faq-general"
+                      target="_blank" style={{color: 'inherit', textDecoration: 'none'}}>
                   FAQ
                 </Link>
               </FooterLink>
@@ -142,7 +143,7 @@ class MarketFooter extends React.Component {
               </FooterLink>
               <FooterLink>
                 <Link to="#" style={{color: 'inherit', textDecoration: 'none'}}>
-                  Partners
+                  Partners (coming soon)
                 </Link>
               </FooterLink>
               {/*<FooterLink>*/}
