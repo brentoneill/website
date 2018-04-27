@@ -38,11 +38,14 @@ const MobileMenuToggle = styled(Button)`
     display: none;
     cursor: pointer;
     float: right;
-    margin-top: 15px;
+    margin-top: 13px;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
   }
 
   i {
-    font-size: 24px;
+    font-size: 20px;
     color: #fff;
   }
 
@@ -57,6 +60,8 @@ const MobileMenuToggle = styled(Button)`
       margin-left: 5px;
       width: 32px;
       height: 32px;
+      margin-top: 17px;
+      line-height: 32px;
       i { font-size: 16px; }
     }
   }
